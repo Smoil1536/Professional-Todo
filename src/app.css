@@ -1,0 +1,55 @@
+:root {
+	/* Primary and Secondry colors */
+	--color-gray: #5D5D5D;
+	--color-white: white;
+	--color-black: black;
+
+	/* Theme Colors */
+	--color-sea-teal: #0FA4AF;
+	--color-orange: #E97000;
+	--color-blue: #2D79BF;
+	--color-yellow: #ECAE00;
+
+	/* Theme - LIGHT */
+	--text-color: var(--color-white);
+	--body-bg-color: var(--color-white);
+	--card-bg-color: var(--color-gray);
+
+	--color-theme: var(--color-sea-teal);
+
+	font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+	line-height: 1.5;
+	font-weight: 400;
+
+	text-rendering: optimizeLegibility;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+*, ::before, ::after{
+	padding: 0;
+	margin: 0;
+}
+.dark{
+	--text-color: var(--color-black);
+	--body-bg-color: var(--color-gray);
+	--card-bg-color: var(--color-white);
+}
+.universal-padding{
+	padding-inline: clamp(1rem, 4.5vw + 0.1rem, 5.5rem);
+}
+
+body{
+	background-color: var(--body-bg-color);
+}
+
+main{
+	padding-block: clamp(2rem, 3vw + 0.1rem, 4rem);
+}
+
+button{
+	all: unset;
+}
+a{
+	text-decoration: none;
+}
