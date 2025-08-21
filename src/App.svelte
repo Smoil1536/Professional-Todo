@@ -1,12 +1,18 @@
 <script>
-    import {Router, Route} from "svelte-routing";
+    import { Router, Route } from "svelte-routing";
+  
     import Home from "./routes/Home.svelte";
     import Todo from "./routes/Todo.svelte";
     import Header from "./lib/components/Header.svelte";
-</script>
+    export let url = "";
+  </script>
 
-<Router>
-    <Header/>
-    <Route path="/"><Home /></Route>
-    <Route path="/todo/:id" component={Todo}/>
-</Router>
+  
+  <Router {url}>
+    <Header />
+    <div>
+      <!-- Cast Home to ComponentType -->
+      <Route path="/todo"><Todo/></Route>
+      <Route path="/"><Home/></Route>
+    </div>
+  </Router>

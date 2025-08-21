@@ -5,8 +5,9 @@
     import Button from "./../lib/components/Button.svelte";
     import TaskUI from "./../lib/components/Task.svelte";
 
-    const props = $props();
-    const ID = props.id;
+    const searchParams = new URLSearchParams(window.location.search);
+    const ID = searchParams.get("id");
+    console.log("id = ",ID);
     const TodoService = new TodoStorageHandler(ID);
 
     let taskOrder = $state([]);
@@ -65,7 +66,7 @@
     </div>
 
     <div class="tasks-wrapper">
-        <ul id="tasks" type="none">
+        <ul id="tasks">
             {#each taskList as item, i}
                 <TaskUI 
                 task={item.task} 

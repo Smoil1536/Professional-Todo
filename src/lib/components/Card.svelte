@@ -20,7 +20,7 @@
 </script>
 
 <div class="card" data-id={props.ID} bind:this={card}>
-    <a href="/todo/{props.ID}" class="card-content">
+    <a href="/todo?id={props.ID}" class="card-content">
         <span
             bind:this={cardName}
             id="card-name"
